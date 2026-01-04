@@ -1,0 +1,599 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5CDE4FF2EFE86AD00E91A5E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B5CDE4FE2EFE86AD00E91A5E /* RealmSwift */; };
+		B5CDE52F2EFE878C00E91A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CDE52B2EFE878C00E91A5E /* Assets.xcassets */; };
+		B5CDE5302EFE878C00E91A5E /* CategoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5002EFE878C00E91A5E /* CategoryObject.swift */; };
+		B5CDE5312EFE878C00E91A5E /* TransactionObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5012EFE878C00E91A5E /* TransactionObject.swift */; };
+		B5CDE5322EFE878C00E91A5E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5032EFE878C00E91A5E /* Category.swift */; };
+		B5CDE5332EFE878C00E91A5E /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5042EFE878C00E91A5E /* Transaction.swift */; };
+		B5CDE5342EFE878C00E91A5E /* BiometricAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5062EFE878C00E91A5E /* BiometricAuthService.swift */; };
+		B5CDE5352EFE878C00E91A5E /* EncryptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5072EFE878C00E91A5E /* EncryptionService.swift */; };
+		B5CDE5362EFE878C00E91A5E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5082EFE878C00E91A5E /* RealmManager.swift */; };
+		B5CDE5372EFE878C00E91A5E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE50A2EFE878C00E91A5E /* Constants.swift */; };
+		B5CDE5382EFE878C00E91A5E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE50B2EFE878C00E91A5E /* Extensions.swift */; };
+		B5CDE5392EFE878C00E91A5E /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE50C2EFE878C00E91A5E /* Validators.swift */; };
+		B5CDE53A2EFE878C00E91A5E /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE50E2EFE878C00E91A5E /* AddExpenseViewModel.swift */; };
+		B5CDE53B2EFE878C00E91A5E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE50F2EFE878C00E91A5E /* AuthenticationViewModel.swift */; };
+		B5CDE53C2EFE878C00E91A5E /* CategoryManagementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5102EFE878C00E91A5E /* CategoryManagementViewModel.swift */; };
+		B5CDE53D2EFE878C00E91A5E /* SummaryReportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5112EFE878C00E91A5E /* SummaryReportsViewModel.swift */; };
+		B5CDE53E2EFE878C00E91A5E /* TransactionHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5122EFE878C00E91A5E /* TransactionHistoryViewModel.swift */; };
+		B5CDE53F2EFE878C00E91A5E /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5142EFE878C00E91A5E /* AuthenticationView.swift */; };
+		B5CDE5402EFE878C00E91A5E /* PINEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5152EFE878C00E91A5E /* PINEntryView.swift */; };
+		B5CDE5412EFE878C00E91A5E /* PINSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5162EFE878C00E91A5E /* PINSetupView.swift */; };
+		B5CDE5422EFE878C00E91A5E /* PINVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5172EFE878C00E91A5E /* PINVerificationView.swift */; };
+		B5CDE5432EFE878C00E91A5E /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5192EFE878C00E91A5E /* AddCategoryView.swift */; };
+		B5CDE5442EFE878C00E91A5E /* CategoryManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE51A2EFE878C00E91A5E /* CategoryManagementView.swift */; };
+		B5CDE5452EFE878C00E91A5E /* CategoryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE51B2EFE878C00E91A5E /* CategoryPickerView.swift */; };
+		B5CDE5462EFE878C00E91A5E /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE51C2EFE878C00E91A5E /* EditCategoryView.swift */; };
+		B5CDE5472EFE878C00E91A5E /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE51E2EFE878C00E91A5E /* AddExpenseView.swift */; };
+		B5CDE5482EFE878C00E91A5E /* TransactionRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE51F2EFE878C00E91A5E /* TransactionRowView.swift */; };
+		B5CDE5492EFE878C00E91A5E /* CategoryPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5212EFE878C00E91A5E /* CategoryPieChartView.swift */; };
+		B5CDE54A2EFE878C00E91A5E /* MonthlyTrendsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5222EFE878C00E91A5E /* MonthlyTrendsChartView.swift */; };
+		B5CDE54B2EFE878C00E91A5E /* SummaryReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5232EFE878C00E91A5E /* SummaryReportsView.swift */; };
+		B5CDE54C2EFE878C00E91A5E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5252EFE878C00E91A5E /* SettingsView.swift */; };
+		B5CDE54D2EFE878C00E91A5E /* EditTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5272EFE878C00E91A5E /* EditTransactionView.swift */; };
+		B5CDE54E2EFE878C00E91A5E /* TransactionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5282EFE878C00E91A5E /* TransactionHistoryView.swift */; };
+		B5CDE54F2EFE878C00E91A5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE52C2EFE878C00E91A5E /* ContentView.swift */; };
+		B5CDE5502EFE878C00E91A5E /* Expense_Tracking_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */; };
+		B5CDE5522EFE922300E91A5E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B5CDE4982EFE520D00E91A5E /* Expense_Tracking_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expense_Tracking_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CDE5002EFE878C00E91A5E /* CategoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryObject.swift; sourceTree = "<group>"; };
+		B5CDE5012EFE878C00E91A5E /* TransactionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionObject.swift; sourceTree = "<group>"; };
+		B5CDE5032EFE878C00E91A5E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B5CDE5042EFE878C00E91A5E /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		B5CDE5062EFE878C00E91A5E /* BiometricAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthService.swift; sourceTree = "<group>"; };
+		B5CDE5072EFE878C00E91A5E /* EncryptionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionService.swift; sourceTree = "<group>"; };
+		B5CDE5082EFE878C00E91A5E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		B5CDE50A2EFE878C00E91A5E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B5CDE50B2EFE878C00E91A5E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B5CDE50C2EFE878C00E91A5E /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		B5CDE50E2EFE878C00E91A5E /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		B5CDE50F2EFE878C00E91A5E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		B5CDE5102EFE878C00E91A5E /* CategoryManagementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManagementViewModel.swift; sourceTree = "<group>"; };
+		B5CDE5112EFE878C00E91A5E /* SummaryReportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryReportsViewModel.swift; sourceTree = "<group>"; };
+		B5CDE5122EFE878C00E91A5E /* TransactionHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryViewModel.swift; sourceTree = "<group>"; };
+		B5CDE5142EFE878C00E91A5E /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		B5CDE5152EFE878C00E91A5E /* PINEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINEntryView.swift; sourceTree = "<group>"; };
+		B5CDE5162EFE878C00E91A5E /* PINSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINSetupView.swift; sourceTree = "<group>"; };
+		B5CDE5172EFE878C00E91A5E /* PINVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINVerificationView.swift; sourceTree = "<group>"; };
+		B5CDE5192EFE878C00E91A5E /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
+		B5CDE51A2EFE878C00E91A5E /* CategoryManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryManagementView.swift; sourceTree = "<group>"; };
+		B5CDE51B2EFE878C00E91A5E /* CategoryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerView.swift; sourceTree = "<group>"; };
+		B5CDE51C2EFE878C00E91A5E /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
+		B5CDE51E2EFE878C00E91A5E /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		B5CDE51F2EFE878C00E91A5E /* TransactionRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRowView.swift; sourceTree = "<group>"; };
+		B5CDE5212EFE878C00E91A5E /* CategoryPieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPieChartView.swift; sourceTree = "<group>"; };
+		B5CDE5222EFE878C00E91A5E /* MonthlyTrendsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyTrendsChartView.swift; sourceTree = "<group>"; };
+		B5CDE5232EFE878C00E91A5E /* SummaryReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryReportsView.swift; sourceTree = "<group>"; };
+		B5CDE5252EFE878C00E91A5E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B5CDE5272EFE878C00E91A5E /* EditTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTransactionView.swift; sourceTree = "<group>"; };
+		B5CDE5282EFE878C00E91A5E /* TransactionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryView.swift; sourceTree = "<group>"; };
+		B5CDE52B2EFE878C00E91A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5CDE52C2EFE878C00E91A5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense_Tracking_AppApp.swift; sourceTree = "<group>"; };
+		B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5CDE4952EFE520D00E91A5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CDE4FF2EFE86AD00E91A5E /* RealmSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5CDE48F2EFE520D00E91A5E = {
+			isa = PBXGroup;
+			children = (
+				B5CDE52E2EFE878C00E91A5E /* Expense_Tracking_App */,
+				B5CDE4992EFE520D00E91A5E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5CDE4992EFE520D00E91A5E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE4982EFE520D00E91A5E /* Expense_Tracking_App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5CDE5022EFE878C00E91A5E /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5002EFE878C00E91A5E /* CategoryObject.swift */,
+				B5CDE5012EFE878C00E91A5E /* TransactionObject.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		B5CDE5052EFE878C00E91A5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5022EFE878C00E91A5E /* Realm */,
+				B5CDE5032EFE878C00E91A5E /* Category.swift */,
+				B5CDE5042EFE878C00E91A5E /* Transaction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5CDE5092EFE878C00E91A5E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5062EFE878C00E91A5E /* BiometricAuthService.swift */,
+				B5CDE5072EFE878C00E91A5E /* EncryptionService.swift */,
+				B5CDE5082EFE878C00E91A5E /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B5CDE50D2EFE878C00E91A5E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE50A2EFE878C00E91A5E /* Constants.swift */,
+				B5CDE50B2EFE878C00E91A5E /* Extensions.swift */,
+				B5CDE50C2EFE878C00E91A5E /* Validators.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B5CDE5132EFE878C00E91A5E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE50E2EFE878C00E91A5E /* AddExpenseViewModel.swift */,
+				B5CDE50F2EFE878C00E91A5E /* AuthenticationViewModel.swift */,
+				B5CDE5102EFE878C00E91A5E /* CategoryManagementViewModel.swift */,
+				B5CDE5112EFE878C00E91A5E /* SummaryReportsViewModel.swift */,
+				B5CDE5122EFE878C00E91A5E /* TransactionHistoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B5CDE5182EFE878C00E91A5E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5142EFE878C00E91A5E /* AuthenticationView.swift */,
+				B5CDE5152EFE878C00E91A5E /* PINEntryView.swift */,
+				B5CDE5162EFE878C00E91A5E /* PINSetupView.swift */,
+				B5CDE5172EFE878C00E91A5E /* PINVerificationView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		B5CDE51D2EFE878C00E91A5E /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5192EFE878C00E91A5E /* AddCategoryView.swift */,
+				B5CDE51A2EFE878C00E91A5E /* CategoryManagementView.swift */,
+				B5CDE51B2EFE878C00E91A5E /* CategoryPickerView.swift */,
+				B5CDE51C2EFE878C00E91A5E /* EditCategoryView.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B5CDE5202EFE878C00E91A5E /* Expense */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE51E2EFE878C00E91A5E /* AddExpenseView.swift */,
+				B5CDE51F2EFE878C00E91A5E /* TransactionRowView.swift */,
+			);
+			path = Expense;
+			sourceTree = "<group>";
+		};
+		B5CDE5242EFE878C00E91A5E /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5212EFE878C00E91A5E /* CategoryPieChartView.swift */,
+				B5CDE5222EFE878C00E91A5E /* MonthlyTrendsChartView.swift */,
+				B5CDE5232EFE878C00E91A5E /* SummaryReportsView.swift */,
+			);
+			path = Reports;
+			sourceTree = "<group>";
+		};
+		B5CDE5262EFE878C00E91A5E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5252EFE878C00E91A5E /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B5CDE5292EFE878C00E91A5E /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5272EFE878C00E91A5E /* EditTransactionView.swift */,
+				B5CDE5282EFE878C00E91A5E /* TransactionHistoryView.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		B5CDE52A2EFE878C00E91A5E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE5292EFE878C00E91A5E /* Transaction */,
+				B5CDE5202EFE878C00E91A5E /* Expense */,
+				B5CDE5242EFE878C00E91A5E /* Reports */,
+				B5CDE51D2EFE878C00E91A5E /* Category */,
+				B5CDE5262EFE878C00E91A5E /* Settings */,
+				B5CDE5182EFE878C00E91A5E /* Authentication */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B5CDE52E2EFE878C00E91A5E /* Expense_Tracking_App */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */,
+				B5CDE52C2EFE878C00E91A5E /* ContentView.swift */,
+				B5CDE5092EFE878C00E91A5E /* Services */,
+				B5CDE50D2EFE878C00E91A5E /* Utilities */,
+				B5CDE5052EFE878C00E91A5E /* Models */,
+				B5CDE52A2EFE878C00E91A5E /* Views */,
+				B5CDE5132EFE878C00E91A5E /* ViewModels */,
+				B5CDE52B2EFE878C00E91A5E /* Assets.xcassets */,
+				B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */,
+			);
+			path = Expense_Tracking_App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5CDE4972EFE520D00E91A5E /* Expense_Tracking_App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5CDE4A32EFE520F00E91A5E /* Build configuration list for PBXNativeTarget "Expense_Tracking_App" */;
+			buildPhases = (
+				B5CDE4942EFE520D00E91A5E /* Sources */,
+				B5CDE4952EFE520D00E91A5E /* Frameworks */,
+				B5CDE4962EFE520D00E91A5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Expense_Tracking_App;
+			packageProductDependencies = (
+				B5CDE4FE2EFE86AD00E91A5E /* RealmSwift */,
+			);
+			productName = Expense_Tracking_App;
+			productReference = B5CDE4982EFE520D00E91A5E /* Expense_Tracking_App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5CDE4902EFE520D00E91A5E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					B5CDE4972EFE520D00E91A5E = {
+						CreatedOnToolsVersion = 16.3;
+					};
+				};
+			};
+			buildConfigurationList = B5CDE4932EFE520D00E91A5E /* Build configuration list for PBXProject "Expense_Tracking_App" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5CDE48F2EFE520D00E91A5E;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B5CDE4FD2EFE86AD00E91A5E /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B5CDE4992EFE520D00E91A5E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5CDE4972EFE520D00E91A5E /* Expense_Tracking_App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5CDE4962EFE520D00E91A5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CDE5522EFE922300E91A5E /* Launch Screen.storyboard in Resources */,
+				B5CDE52F2EFE878C00E91A5E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5CDE4942EFE520D00E91A5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CDE5302EFE878C00E91A5E /* CategoryObject.swift in Sources */,
+				B5CDE5312EFE878C00E91A5E /* TransactionObject.swift in Sources */,
+				B5CDE5322EFE878C00E91A5E /* Category.swift in Sources */,
+				B5CDE5332EFE878C00E91A5E /* Transaction.swift in Sources */,
+				B5CDE5342EFE878C00E91A5E /* BiometricAuthService.swift in Sources */,
+				B5CDE5352EFE878C00E91A5E /* EncryptionService.swift in Sources */,
+				B5CDE5362EFE878C00E91A5E /* RealmManager.swift in Sources */,
+				B5CDE5372EFE878C00E91A5E /* Constants.swift in Sources */,
+				B5CDE5382EFE878C00E91A5E /* Extensions.swift in Sources */,
+				B5CDE5392EFE878C00E91A5E /* Validators.swift in Sources */,
+				B5CDE53A2EFE878C00E91A5E /* AddExpenseViewModel.swift in Sources */,
+				B5CDE53B2EFE878C00E91A5E /* AuthenticationViewModel.swift in Sources */,
+				B5CDE53C2EFE878C00E91A5E /* CategoryManagementViewModel.swift in Sources */,
+				B5CDE53D2EFE878C00E91A5E /* SummaryReportsViewModel.swift in Sources */,
+				B5CDE53E2EFE878C00E91A5E /* TransactionHistoryViewModel.swift in Sources */,
+				B5CDE53F2EFE878C00E91A5E /* AuthenticationView.swift in Sources */,
+				B5CDE5402EFE878C00E91A5E /* PINEntryView.swift in Sources */,
+				B5CDE5412EFE878C00E91A5E /* PINSetupView.swift in Sources */,
+				B5CDE5422EFE878C00E91A5E /* PINVerificationView.swift in Sources */,
+				B5CDE5432EFE878C00E91A5E /* AddCategoryView.swift in Sources */,
+				B5CDE5442EFE878C00E91A5E /* CategoryManagementView.swift in Sources */,
+				B5CDE5452EFE878C00E91A5E /* CategoryPickerView.swift in Sources */,
+				B5CDE5462EFE878C00E91A5E /* EditCategoryView.swift in Sources */,
+				B5CDE5472EFE878C00E91A5E /* AddExpenseView.swift in Sources */,
+				B5CDE5482EFE878C00E91A5E /* TransactionRowView.swift in Sources */,
+				B5CDE5492EFE878C00E91A5E /* CategoryPieChartView.swift in Sources */,
+				B5CDE54A2EFE878C00E91A5E /* MonthlyTrendsChartView.swift in Sources */,
+				B5CDE54B2EFE878C00E91A5E /* SummaryReportsView.swift in Sources */,
+				B5CDE54C2EFE878C00E91A5E /* SettingsView.swift in Sources */,
+				B5CDE54D2EFE878C00E91A5E /* EditTransactionView.swift in Sources */,
+				B5CDE54E2EFE878C00E91A5E /* TransactionHistoryView.swift in Sources */,
+				B5CDE54F2EFE878C00E91A5E /* ContentView.swift in Sources */,
+				B5CDE5502EFE878C00E91A5E /* Expense_Tracking_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B5CDE4A12EFE520F00E91A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5CDE4A22EFE520F00E91A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5CDE4A42EFE520F00E91A5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Expense-Tracking-App-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibarts.Synopsis.Expense-Tracking-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B5CDE4A52EFE520F00E91A5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Expense-Tracking-App-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ibarts.Synopsis.Expense-Tracking-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5CDE4932EFE520D00E91A5E /* Build configuration list for PBXProject "Expense_Tracking_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CDE4A12EFE520F00E91A5E /* Debug */,
+				B5CDE4A22EFE520F00E91A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5CDE4A32EFE520F00E91A5E /* Build configuration list for PBXNativeTarget "Expense_Tracking_App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CDE4A42EFE520F00E91A5E /* Debug */,
+				B5CDE4A52EFE520F00E91A5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5CDE4FD2EFE86AD00E91A5E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5CDE4FE2EFE86AD00E91A5E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5CDE4FD2EFE86AD00E91A5E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B5CDE4902EFE520D00E91A5E /* Project object */;
+}
