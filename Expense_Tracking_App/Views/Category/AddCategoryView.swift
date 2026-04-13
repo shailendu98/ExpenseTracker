@@ -26,6 +26,7 @@ struct AddCategoryView: View {
         "gift.fill", "star.fill", "flag.fill", "tag.fill",
     ]
 
+
     private let availableColors: [Color] = [
         Color(hex: "FF6B6B"), Color(hex: "4ECDC4"), Color(hex: "95E1D3"),
         Color(hex: "F38181"), Color(hex: "AA96DA"), Color(hex: "FCBAD3"),
@@ -121,6 +122,7 @@ struct AddCategoryView: View {
                 columns: Array(repeating: GridItem(.flexible()), count: 8),
                 spacing: Constants.Spacing.sm
             ) {
+                // Preset colour swatches
                 ForEach(availableColors, id: \.self) { color in
                     Circle()
                         .fill(color)
@@ -134,6 +136,26 @@ struct AddCategoryView: View {
                             selectedColor = color
                         }
                 }
+
+                // Custom colour picker button
+                ColorPicker("", selection: $selectedColor, supportsOpacity: false)
+                    .labelsHidden()
+                    .frame(width: 40, height: 40)
+                    .background(
+                        Circle()
+                            .fill(
+                                AngularGradient(
+                                    colors: [.red, .yellow, .green, .cyan, .blue, .purple, .red],
+                                    center: .center
+                                )
+                            )
+                    )
+                    .clipShape(Circle())
+                    .overlay(
+                        Circle()
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+                    .shadow(color: Color.black.opacity(0.15), radius: 3)
             }
             .padding(Constants.Spacing.md)
             .cardStyle()
