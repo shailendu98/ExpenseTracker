@@ -50,8 +50,7 @@ struct TransactionRowView: View {
                 .font(.system(size: Constants.FontSize.body, weight: .bold))
                 .foregroundColor(Constants.Colors.accent)
         }
-        .padding(Constants.Spacing.md)
-        .cardStyle()
+        .padding(.vertical, Constants.Spacing.sm)
         .padding(.horizontal, Constants.Spacing.md)
     }
 

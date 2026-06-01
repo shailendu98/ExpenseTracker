@@ -48,6 +48,7 @@ struct SummaryReportsView: View {
                         }
                     }
                     .padding(Constants.Spacing.md)
+                    .padding(.bottom, 140) // clear floating tab bar + FAB
                 }
             }
             .navigationTitle("Reports")

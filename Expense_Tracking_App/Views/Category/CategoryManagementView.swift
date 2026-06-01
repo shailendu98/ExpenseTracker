@@ -30,6 +30,7 @@ struct CategoryManagementView: View {
                         addCategoryButton
                     }
                     .padding(Constants.Spacing.md)
+                    .padding(.bottom, 140) // clear floating tab bar + FAB
                 }
             }
             .navigationTitle("Categories")

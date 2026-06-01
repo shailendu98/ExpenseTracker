@@ -217,15 +217,14 @@ struct TransactionHistoryView: View {
                                     Label("Delete", systemImage: "trash")
                                 }
                             }
-                            .listRowInsets(
-                                EdgeInsets(
-                                    top: Constants.Spacing.md / 2,
-                                    leading: Constants.Spacing.md,
-                                    bottom: Constants.Spacing.md / 2,
-                                    trailing: Constants.Spacing.md
-                                )
-                            )
+                            .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
                             .listRowSeparator(.hidden)
+                            .listRowBackground(
+                                RoundedRectangle(cornerRadius: Constants.CornerRadius.md)
+                                    .fill(Constants.Colors.cardBackground)
+                                    .padding(.horizontal, Constants.Spacing.md)
+                                    .padding(.vertical, 4)
+                            )
                     }
                 } header: {
                     HStack {
@@ -242,7 +241,9 @@ struct TransactionHistoryView: View {
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
         .background(Constants.Colors.background)
+        .contentMargins(.bottom, 140, for: .scrollContent)
     }
+
 
     // MARK: - Empty State
 
@@ -285,6 +286,8 @@ struct StatCard: View {
             Text(value)
                 .font(.system(size: Constants.FontSize.body, weight: .bold))
                 .foregroundColor(Constants.Colors.textPrimary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(Constants.Spacing.md)
