@@ -13,6 +13,7 @@ struct TransactionHistoryView: View {
     @State private var showSortOptions = false
     @State private var showFilterOptions = false
     @State private var selectedTransaction: Transaction?
+    @State private var showDateFilter = false
 
     var body: some View {
         NavigationView {
@@ -61,6 +62,14 @@ struct TransactionHistoryView: View {
                     }
                 }
             }
+            .sheet(isPresented: $showDateFilter) {
+                DateFilterSheet(
+                    filterStart: $viewModel.dateFilterStart,
+                    filterEnd:   $viewModel.dateFilterEnd
+                )
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+            }
         }
     }
 
@@ -93,89 +102,122 @@ struct TransactionHistoryView: View {
     // MARK: - Filter and Sort Bar
 
     private var filterSortBar: some View {
-        HStack(spacing: Constants.Spacing.md) {
-            // Sort Button
-            Menu {
-                ForEach(
-                    [
-                        TransactionSortOption.dateDescending, .dateAscending, .amountDescending,
-                        .amountAscending, .category,
-                    ], id: \.self
-                ) { option in
-                    Button(action: {
-                        withAnimation {
-                            viewModel.selectedSortOption = option
-                        }
-                    }) {
-                        HStack {
-                            Text(option.displayName)
-                            if viewModel.selectedSortOption == option {
-                                Image(systemName: "checkmark")
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: Constants.Spacing.sm) {
+                // Sort Button
+                Menu {
+                    ForEach(
+                        [
+                            TransactionSortOption.dateDescending, .dateAscending, .amountDescending,
+                            .amountAscending, .category,
+                        ], id: \.self
+                    ) { option in
+                        Button(action: {
+                            withAnimation {
+                                viewModel.selectedSortOption = option
+                            }
+                        }) {
+                            HStack {
+                                Text(option.displayName)
+                                if viewModel.selectedSortOption == option {
+                                    Image(systemName: "checkmark")
+                                }
                             }
                         }
                     }
-                }
-            } label: {
-                HStack {
-                    Image(systemName: "arrow.up.arrow.down")
-                    Text("Sort")
-                }
-                .font(.system(size: Constants.FontSize.caption, weight: .medium))
-                .foregroundColor(Constants.Colors.primary)
-                .padding(.horizontal, Constants.Spacing.md)
-                .padding(.vertical, Constants.Spacing.sm)
-                .background(Constants.Colors.primary.opacity(0.1))
-                .cornerRadius(Constants.CornerRadius.sm)
-            }
-
-            // Filter Button
-            Menu {
-                Button(action: {
-                    withAnimation {
-                        viewModel.selectedCategoryFilter = nil
-                    }
-                }) {
-                    HStack {
-                        Text("All Categories")
-                        if viewModel.selectedCategoryFilter == nil {
-                            Image(systemName: "checkmark")
-                        }
-                    }
+                } label: {
+                    filterChip(
+                        icon: "arrow.up.arrow.down",
+                        label: "Sort",
+                        isActive: false
+                    )
                 }
 
-                Divider()
-
-                ForEach(viewModel.availableCategories, id: \.self) { category in
+                // Category Filter Button
+                Menu {
                     Button(action: {
-                        withAnimation {
-                            viewModel.selectedCategoryFilter = category
-                        }
+                        withAnimation { viewModel.selectedCategoryFilter = nil }
                     }) {
                         HStack {
-                            Text(category)
-                            if viewModel.selectedCategoryFilter == category {
-                                Image(systemName: "checkmark")
+                            Text("All Categories")
+                            if viewModel.selectedCategoryFilter == nil { Image(systemName: "checkmark") }
+                        }
+                    }
+                    Divider()
+                    ForEach(viewModel.availableCategories, id: \.self) { category in
+                        Button(action: {
+                            withAnimation { viewModel.selectedCategoryFilter = category }
+                        }) {
+                            HStack {
+                                Text(category)
+                                if viewModel.selectedCategoryFilter == category { Image(systemName: "checkmark") }
                             }
                         }
                     }
+                } label: {
+                    filterChip(
+                        icon: "line.3.horizontal.decrease.circle",
+                        label: viewModel.selectedCategoryFilter ?? "Category",
+                        isActive: viewModel.selectedCategoryFilter != nil
+                    )
                 }
-            } label: {
-                HStack {
-                    Image(systemName: "line.3.horizontal.decrease.circle")
-                    Text(viewModel.selectedCategoryFilter ?? "Filter")
-                }
-                .font(.system(size: Constants.FontSize.caption, weight: .medium))
-                .foregroundColor(Constants.Colors.primary)
-                .padding(.horizontal, Constants.Spacing.md)
-                .padding(.vertical, Constants.Spacing.sm)
-                .background(Constants.Colors.primary.opacity(0.1))
-                .cornerRadius(Constants.CornerRadius.sm)
-            }
 
-            Spacer()
+                // Date Filter Button / Active Chip
+                if viewModel.isDateFiltered {
+                    // Active state — show label with × dismiss
+                    Button {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
+                            viewModel.clearDateFilter()
+                        }
+                    } label: {
+                        HStack(spacing: 5) {
+                            Image(systemName: "calendar")
+                                .font(.system(size: 12, weight: .semibold))
+                            Text(viewModel.activeDateLabel)
+                                .font(.system(size: Constants.FontSize.caption, weight: .semibold))
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 12))
+                        }
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 7)
+                        .background(
+                            Capsule()
+                                .fill(Constants.Colors.primary)
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .transition(.scale.combined(with: .opacity))
+                } else {
+                    Button { showDateFilter = true } label: {
+                        filterChip(icon: "calendar", label: "Date", isActive: false)
+                    }
+                    .buttonStyle(.plain)
+                    .transition(.scale.combined(with: .opacity))
+                }
+            }
+            .padding(.horizontal, Constants.Spacing.md)
+            .padding(.vertical, Constants.Spacing.sm)
+            .animation(.spring(response: 0.3, dampingFraction: 0.7), value: viewModel.isDateFiltered)
         }
-        .padding(.horizontal, Constants.Spacing.md)
-        .padding(.vertical, Constants.Spacing.sm)
+    }
+
+    /// Reusable chip label used by Sort and Category buttons
+    private func filterChip(icon: String, label: String, isActive: Bool) -> some View {
+        HStack(spacing: 5) {
+            Image(systemName: icon)
+                .font(.system(size: 12, weight: .semibold))
+            Text(label)
+                .font(.system(size: Constants.FontSize.caption, weight: .medium))
+                .lineLimit(1)
+        }
+        .foregroundColor(isActive ? .white : Constants.Colors.primary)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 7)
+        .background(
+            Capsule()
+                .fill(isActive ? Constants.Colors.primary : Constants.Colors.primary.opacity(0.1))
+        )
     }
 
     // MARK: - Statistics Summary

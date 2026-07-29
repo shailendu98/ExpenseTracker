@@ -21,6 +21,12 @@ class TransactionHistoryViewModel: ObservableObject {
             filterTransactions()
         }
     }
+    @Published var dateFilterStart: Date? {
+        didSet { filterTransactions() }
+    }
+    @Published var dateFilterEnd: Date? {
+        didSet { filterTransactions() }
+    }
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     @Published var availableCategories: [String] = []
@@ -92,29 +98,16 @@ class TransactionHistoryViewModel: ObservableObject {
     // MARK: - Filter Transactions
 
     private func filterTransactions() {
-        print("🔍 Filtering transactions...")
-        print("📊 Total transactions: \(transactions.count)")
-        print("🏷️ Selected category: \(selectedCategoryFilter ?? "None")")
-        print("🔎 Search text: '\(searchText)'")
-
         var filtered = transactions
 
         // Apply category filter
         if let category = selectedCategoryFilter, !category.isEmpty {
-            print("🔧 Filtering by category: \(category)")
+            filtered = filtered.filter { $0.categoryName == category }
+        }
 
-            // Debug: Print all categories in transactions
-            let allCategories = Set(transactions.map { $0.categoryName })
-            print("📋 All categories in data: \(allCategories)")
-
-            filtered = filtered.filter { transaction in
-                let match = transaction.categoryName == category
-                if !match {
-                    print("  ❌ '\(transaction.categoryName)' != '\(category)'")
-                }
-                return match
-            }
-            print("✅ After category filter: \(filtered.count) transactions")
+        // Apply date filter
+        if let start = dateFilterStart, let end = dateFilterEnd {
+            filtered = filtered.filter { $0.date >= start && $0.date <= end }
         }
 
         // Apply search filter
@@ -124,13 +117,10 @@ class TransactionHistoryViewModel: ObservableObject {
                     || transaction.categoryName.localizedCaseInsensitiveContains(searchText)
                     || transaction.formattedAmount.contains(searchText)
             }
-            print("✅ After search filter: \(filtered.count) transactions")
         }
 
         // CRITICAL: This assignment triggers the @Published update
         filteredTransactions = filtered
-        print("📋 Final filtered count: \(filteredTransactions.count)")
-        print("---")
     }
 
     // MARK: - Delete Transaction
@@ -219,5 +209,30 @@ class TransactionHistoryViewModel: ObservableObject {
     var averageTransaction: Double {
         guard !filteredTransactions.isEmpty else { return 0 }
         return totalSpent / Double(filteredTransactions.count)
+    }
+
+    // MARK: - Date Filter Helpers
+
+    var isDateFiltered: Bool {
+        dateFilterStart != nil
+    }
+
+    /// Human-readable label for the active date chip, e.g. "29 Jul" or "25–29 Jul"
+    var activeDateLabel: String {
+        guard let start = dateFilterStart, let end = dateFilterEnd else { return "" }
+        let cal = Calendar.current
+        if cal.isDate(start, inSameDayAs: end) {
+            return start.formatted(as: "d MMM")
+        }
+        // Same year: omit year on start
+        let startStr = cal.isDate(start, equalTo: end, toGranularity: .year)
+            ? start.formatted(as: "d MMM")
+            : start.formatted(as: "d MMM yy")
+        return "\(startStr) – \(end.formatted(as: "d MMM"))"
+    }
+
+    func clearDateFilter() {
+        dateFilterStart = nil
+        dateFilterEnd   = nil
     }
 }

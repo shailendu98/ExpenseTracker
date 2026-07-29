@@ -51,6 +51,7 @@
 		B5CDE5502EFE878C00E91A5E /* Expense_Tracking_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */; };
 		B5CDE5522EFE922300E91A5E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */; };
 		B7C0DF585229F62B821F6E3F /* ReceiptScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F078157DAE0EEF637828C75 /* ReceiptScannerService.swift */; };
+		C4172FDB48598F4B1127DCE5 /* DateFilterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EEB7FD0C7F316013C4769B /* DateFilterSheet.swift */; };
 		C54B57FD4ED56389D471E321 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28101C8AF256D0A9ADCFADF /* Speech.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense_Tracking_AppApp.swift; sourceTree = "<group>"; };
 		B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C6E439CD045C2B7766DC0F7D /* BudgetGoalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BudgetGoalView.swift; path = BudgetGoalView.swift; sourceTree = "<group>"; };
+		C7EEB7FD0C7F316013C4769B /* DateFilterSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DateFilterSheet.swift; sourceTree = "<group>"; };
 		D28101C8AF256D0A9ADCFADF /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 		E6BE00E5365061DE9D26B49A /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -252,6 +254,7 @@
 			children = (
 				B5CDE5272EFE878C00E91A5E /* EditTransactionView.swift */,
 				B5CDE5282EFE878C00E91A5E /* TransactionHistoryView.swift */,
+				C7EEB7FD0C7F316013C4769B /* DateFilterSheet.swift */,
 			);
 			path = Transaction;
 			sourceTree = "<group>";
@@ -292,8 +295,8 @@
 				C6E439CD045C2B7766DC0F7D /* BudgetGoalView.swift */,
 				2FE7D6D9CF877F9A5785B2F6 /* BudgetSetupSheet.swift */,
 			);
-			path = Budget;
 			name = Budget;
+			path = Budget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +416,7 @@
 				2534CC4301223CB840C579F0 /* VoiceEntryView.swift in Sources */,
 				2FD8F3681E6F7B8A9A656DA5 /* BudgetGoalView.swift in Sources */,
 				45A8A026B56431AF0F4D42A0 /* BudgetSetupSheet.swift in Sources */,
+				C4172FDB48598F4B1127DCE5 /* DateFilterSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
