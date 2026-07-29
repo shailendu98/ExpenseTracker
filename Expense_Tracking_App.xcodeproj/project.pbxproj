@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2534CC4301223CB840C579F0 /* VoiceEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D09B984AB5DF022188BA33 /* VoiceEntryView.swift */; };
+		2B816839AC7FB22015787C26 /* ReceiptScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112B5783B314DC9951263494 /* ReceiptScannerView.swift */; };
+		2FD8F3681E6F7B8A9A656DA5 /* BudgetGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E439CD045C2B7766DC0F7D /* BudgetGoalView.swift */; };
+		45A8A026B56431AF0F4D42A0 /* BudgetSetupSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7D6D9CF877F9A5785B2F6 /* BudgetSetupSheet.swift */; };
+		6AC0576DEB97DCEBDA923C08 /* BudgetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FDEC85EEF44E26814312B /* BudgetService.swift */; };
+		79D95969E82B5C164AD76960 /* VoiceExpenseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FC97D93E81B34FD99872D /* VoiceExpenseParser.swift */; };
+		B194C892CC250F574EA8E05F /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BE00E5365061DE9D26B49A /* Vision.framework */; };
 		B5CDE4FF2EFE86AD00E91A5E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B5CDE4FE2EFE86AD00E91A5E /* RealmSwift */; };
 		B5CDE52F2EFE878C00E91A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CDE52B2EFE878C00E91A5E /* Assets.xcassets */; };
 		B5CDE5302EFE878C00E91A5E /* CategoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE5002EFE878C00E91A5E /* CategoryObject.swift */; };
@@ -43,9 +50,17 @@
 		B5CDE54F2EFE878C00E91A5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE52C2EFE878C00E91A5E /* ContentView.swift */; };
 		B5CDE5502EFE878C00E91A5E /* Expense_Tracking_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */; };
 		B5CDE5522EFE922300E91A5E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */; };
+		B7C0DF585229F62B821F6E3F /* ReceiptScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F078157DAE0EEF637828C75 /* ReceiptScannerService.swift */; };
+		C54B57FD4ED56389D471E321 /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D28101C8AF256D0A9ADCFADF /* Speech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112B5783B314DC9951263494 /* ReceiptScannerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReceiptScannerView.swift; sourceTree = "<group>"; };
+		2FE7D6D9CF877F9A5785B2F6 /* BudgetSetupSheet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BudgetSetupSheet.swift; path = BudgetSetupSheet.swift; sourceTree = "<group>"; };
+		49D09B984AB5DF022188BA33 /* VoiceEntryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceEntryView.swift; sourceTree = "<group>"; };
+		692FDEC85EEF44E26814312B /* BudgetService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BudgetService.swift; sourceTree = "<group>"; };
+		6B7FC97D93E81B34FD99872D /* VoiceExpenseParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = VoiceExpenseParser.swift; sourceTree = "<group>"; };
+		9F078157DAE0EEF637828C75 /* ReceiptScannerService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReceiptScannerService.swift; sourceTree = "<group>"; };
 		B5CDE4982EFE520D00E91A5E /* Expense_Tracking_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expense_Tracking_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CDE5002EFE878C00E91A5E /* CategoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryObject.swift; sourceTree = "<group>"; };
 		B5CDE5012EFE878C00E91A5E /* TransactionObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionObject.swift; sourceTree = "<group>"; };
@@ -82,6 +97,9 @@
 		B5CDE52C2EFE878C00E91A5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5CDE52D2EFE878C00E91A5E /* Expense_Tracking_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense_Tracking_AppApp.swift; sourceTree = "<group>"; };
 		B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C6E439CD045C2B7766DC0F7D /* BudgetGoalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BudgetGoalView.swift; path = BudgetGoalView.swift; sourceTree = "<group>"; };
+		D28101C8AF256D0A9ADCFADF /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		E6BE00E5365061DE9D26B49A /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,17 +108,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CDE4FF2EFE86AD00E91A5E /* RealmSwift in Frameworks */,
+				B194C892CC250F574EA8E05F /* Vision.framework in Frameworks */,
+				C54B57FD4ED56389D471E321 /* Speech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44EC6724E813DFC7020776C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6BE00E5365061DE9D26B49A /* Vision.framework */,
+				D28101C8AF256D0A9ADCFADF /* Speech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5CDE48F2EFE520D00E91A5E = {
 			isa = PBXGroup;
 			children = (
 				B5CDE52E2EFE878C00E91A5E /* Expense_Tracking_App */,
 				B5CDE4992EFE520D00E91A5E /* Products */,
+				44EC6724E813DFC7020776C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +167,9 @@
 				B5CDE5062EFE878C00E91A5E /* BiometricAuthService.swift */,
 				B5CDE5072EFE878C00E91A5E /* EncryptionService.swift */,
 				B5CDE5082EFE878C00E91A5E /* RealmManager.swift */,
+				692FDEC85EEF44E26814312B /* BudgetService.swift */,
+				9F078157DAE0EEF637828C75 /* ReceiptScannerService.swift */,
+				6B7FC97D93E81B34FD99872D /* VoiceExpenseParser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -190,6 +223,8 @@
 			children = (
 				B5CDE51E2EFE878C00E91A5E /* AddExpenseView.swift */,
 				B5CDE51F2EFE878C00E91A5E /* TransactionRowView.swift */,
+				112B5783B314DC9951263494 /* ReceiptScannerView.swift */,
+				49D09B984AB5DF022188BA33 /* VoiceEntryView.swift */,
 			);
 			path = Expense;
 			sourceTree = "<group>";
@@ -230,6 +265,7 @@
 				B5CDE51D2EFE878C00E91A5E /* Category */,
 				B5CDE5262EFE878C00E91A5E /* Settings */,
 				B5CDE5182EFE878C00E91A5E /* Authentication */,
+				B718A6B483827A46C8B39CF2 /* Budget */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +284,16 @@
 				B5CDE5512EFE922300E91A5E /* Launch Screen.storyboard */,
 			);
 			path = Expense_Tracking_App;
+			sourceTree = "<group>";
+		};
+		B718A6B483827A46C8B39CF2 /* Budget */ = {
+			isa = PBXGroup;
+			children = (
+				C6E439CD045C2B7766DC0F7D /* BudgetGoalView.swift */,
+				2FE7D6D9CF877F9A5785B2F6 /* BudgetSetupSheet.swift */,
+			);
+			path = Budget;
+			name = Budget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +406,13 @@
 				B5CDE54E2EFE878C00E91A5E /* TransactionHistoryView.swift in Sources */,
 				B5CDE54F2EFE878C00E91A5E /* ContentView.swift in Sources */,
 				B5CDE5502EFE878C00E91A5E /* Expense_Tracking_AppApp.swift in Sources */,
+				6AC0576DEB97DCEBDA923C08 /* BudgetService.swift in Sources */,
+				B7C0DF585229F62B821F6E3F /* ReceiptScannerService.swift in Sources */,
+				79D95969E82B5C164AD76960 /* VoiceExpenseParser.swift in Sources */,
+				2B816839AC7FB22015787C26 /* ReceiptScannerView.swift in Sources */,
+				2534CC4301223CB840C579F0 /* VoiceEntryView.swift in Sources */,
+				2FD8F3681E6F7B8A9A656DA5 /* BudgetGoalView.swift in Sources */,
+				45A8A026B56431AF0F4D42A0 /* BudgetSetupSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

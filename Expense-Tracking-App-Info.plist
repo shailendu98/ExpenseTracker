@@ -22,6 +22,14 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Used to scan receipts and automatically fill in your expense details.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to select receipt photos for automatic expense scanning.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Used to convert your voice into expense entries automatically.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used to record your voice for hands-free expense entry.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

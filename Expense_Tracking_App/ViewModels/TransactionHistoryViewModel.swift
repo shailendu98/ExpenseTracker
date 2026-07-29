@@ -35,6 +35,7 @@ class TransactionHistoryViewModel: ObservableObject {
         loadTransactions()
         loadCategories()
         setupSearchObserver()
+        setupTransactionSavedObserver()
     }
 
     // MARK: - Setup Observers
@@ -45,6 +46,16 @@ class TransactionHistoryViewModel: ObservableObject {
             .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .sink { [weak self] _ in
                 self?.filterTransactions()
+            }
+            .store(in: &cancellables)
+    }
+
+    private func setupTransactionSavedObserver() {
+        NotificationCenter.default
+            .publisher(for: .transactionSaved)
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.loadTransactions()
             }
             .store(in: &cancellables)
     }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TransactionHistoryView: View {
     @StateObject private var viewModel = TransactionHistoryViewModel()
+    @ObservedObject private var budgetService = BudgetService.shared
     @State private var showSortOptions = false
     @State private var showFilterOptions = false
     @State private var selectedTransaction: Transaction?
@@ -19,6 +20,12 @@ struct TransactionHistoryView: View {
                 Constants.Colors.background.ignoresSafeArea()
 
                 VStack(spacing: 0) {
+                    // Budget Goal Card
+                    BudgetGoalView(
+                        budgetService: budgetService,
+                        transactions: viewModel.filteredTransactions
+                    )
+
                     // Search Bar
                     searchBar
 

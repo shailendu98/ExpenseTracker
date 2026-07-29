@@ -8,6 +8,11 @@
 import Combine
 import Foundation
 
+// MARK: - Notification Names
+extension Notification.Name {
+    static let transactionSaved = Notification.Name("transactionSaved")
+}
+
 class AddExpenseViewModel: ObservableObject {
     @Published var amount: String = ""
     @Published var date: Date = Date()
@@ -107,6 +112,9 @@ class AddExpenseViewModel: ObservableObject {
             isLoading = false
             showSuccess = true
 
+            // Notify other views that a transaction was saved
+            NotificationCenter.default.post(name: .transactionSaved, object: nil)
+
             // Reset form after short delay
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.resetForm()
@@ -139,5 +147,39 @@ class AddExpenseViewModel: ObservableObject {
     var formattedAmount: String {
         guard let value = Double(amount) else { return "₹0.00" }
         return value.currencyFormatted
+    }
+
+    // MARK: - Apply Scanned Receipt Data
+
+    func applyScannedData(_ data: ScannedReceiptData) {
+        if let amt = data.amount {
+            amount = String(format: "%.2f", amt)
+        }
+        if let scannedDate = data.date {
+            date = scannedDate
+        }
+        if let category = data.suggestedCategory,
+           availableCategories.contains(where: { $0.name == category }) {
+            selectedCategory = category
+        }
+        if let merchant = data.merchant, !merchant.isEmpty {
+            description = merchant
+        }
+    }
+
+    // MARK: - Apply Voice Parsed Expense
+
+    func applyVoiceExpense(_ parsed: ParsedVoiceExpense) {
+        if let amt = parsed.amount {
+            amount = String(format: "%.0f", amt)
+        }
+        if let category = parsed.categoryName,
+           availableCategories.contains(where: { $0.name == category }) {
+            selectedCategory = category
+        }
+        if !parsed.description.isEmpty {
+            description = parsed.description
+        }
+        date = Date()
     }
 }

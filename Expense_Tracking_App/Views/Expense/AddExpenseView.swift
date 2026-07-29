@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct AddExpenseView: View {
     @StateObject private var viewModel = AddExpenseViewModel()
     @Environment(\.dismiss) private var dismiss
     @State private var showCategoryPicker = false
     @State private var showDatePicker = false
+    @State private var showReceiptScanner = false
+    @State private var showVoiceEntry = false
 
     var onSave: (() -> Void)?
 
@@ -22,6 +25,9 @@ struct AddExpenseView: View {
 
                 ScrollView {
                     VStack(spacing: Constants.Spacing.lg) {
+                        // Smart Entry Banner
+                        smartEntryBanner
+
                         // Amount Section
                         amountSection
 
@@ -62,6 +68,84 @@ struct AddExpenseView: View {
                     selectedCategory: $viewModel.selectedCategory
                 )
             }
+            .sheet(isPresented: $showReceiptScanner) {
+                ReceiptScannerView { scannedData in
+                    viewModel.applyScannedData(scannedData)
+                }
+            }
+            .sheet(isPresented: $showVoiceEntry) {
+                VoiceEntryView { parsedExpense in
+                    viewModel.applyVoiceExpense(parsedExpense)
+                }
+            }
+        }
+    }
+
+    // MARK: - Smart Entry Banner
+
+    private var smartEntryBanner: some View {
+        HStack(spacing: Constants.Spacing.sm) {
+            // Receipt Scanner Button
+            Button(action: { showReceiptScanner = true }) {
+                VStack(spacing: 6) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(
+                                LinearGradient(
+                                    colors: [Constants.Colors.primary.opacity(0.12), Constants.Colors.primary.opacity(0.06)],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 48, height: 48)
+                        Image(systemName: "doc.viewfinder.fill")
+                            .font(.system(size: 22))
+                            .foregroundColor(Constants.Colors.primary)
+                    }
+                    Text("Scan Receipt")
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundColor(Constants.Colors.primary)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, Constants.Spacing.sm)
+                .background(
+                    RoundedRectangle(cornerRadius: Constants.CornerRadius.md)
+                        .fill(Color(.systemBackground))
+                        .shadow(color: Constants.Colors.primary.opacity(0.1), radius: 6, y: 2)
+                )
+            }
+            .buttonStyle(.plain)
+
+            // Voice Entry Button
+            Button(action: { showVoiceEntry = true }) {
+                VStack(spacing: 6) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(
+                                LinearGradient(
+                                    colors: [Constants.Colors.accent.opacity(0.12), Constants.Colors.accent.opacity(0.06)],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .frame(width: 48, height: 48)
+                        Image(systemName: "mic.fill")
+                            .font(.system(size: 22))
+                            .foregroundColor(Constants.Colors.accent)
+                    }
+                    Text("Voice Entry")
+                        .font(.system(size: 11, weight: .semibold))
+                        .foregroundColor(Constants.Colors.accent)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, Constants.Spacing.sm)
+                .background(
+                    RoundedRectangle(cornerRadius: Constants.CornerRadius.md)
+                        .fill(Color(.systemBackground))
+                        .shadow(color: Constants.Colors.accent.opacity(0.1), radius: 6, y: 2)
+                )
+            }
+            .buttonStyle(.plain)
         }
     }
 
