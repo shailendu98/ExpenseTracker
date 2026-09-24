@@ -20,7 +20,7 @@ enum TransactionSortOption: Hashable, Equatable {
 class RealmManager {
     static let shared = RealmManager()
 
-    private var realm: Realm {
+    var realm: Realm {
         do {
             let realmInstance = try Realm()
             print("✅ Realm database opened successfully")
@@ -38,10 +38,10 @@ class RealmManager {
 
         // Configure Realm
         let config = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 2,
             migrationBlock: { migration, oldSchemaVersion in
-                // Handle migrations if needed in future
-                print("🔄 Realm migration from schema version \(oldSchemaVersion)")
+                // v1 → v2: Added KhataPersonObject and KhataEntryObject (new tables, no data migration needed)
+                print("🔄 Realm migration from schema version \(oldSchemaVersion) → 2")
             }
         )
         Realm.Configuration.defaultConfiguration = config

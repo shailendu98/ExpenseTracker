@@ -10,13 +10,15 @@ import SwiftUI
 // MARK: - Tab Enum
 enum AppTab: Int, CaseIterable {
     case transactions = 0
-    case reports      = 1
-    case categories   = 2
-    case settings     = 3
+    case khata        = 1
+    case reports      = 2
+    case categories   = 3
+    case settings     = 4
 
     var icon: String {
         switch self {
         case .transactions: return "list.bullet"
+        case .khata:        return "book.closed.fill"
         case .reports:      return "chart.pie.fill"
         case .categories:   return "square.grid.2x2.fill"
         case .settings:     return "gearshape.fill"
@@ -26,6 +28,7 @@ enum AppTab: Int, CaseIterable {
     var label: String {
         switch self {
         case .transactions: return "Transactions"
+        case .khata:        return "Khata"
         case .reports:      return "Reports"
         case .categories:   return "Categories"
         case .settings:     return "Settings"
@@ -43,14 +46,14 @@ struct FloatingTabBar: View {
                 tabButton(tab)
             }
         }
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 6)
         .padding(.vertical, 10)
         .background(
             RoundedRectangle(cornerRadius: 36)
                 .fill(Color(.systemBackground))
                 .shadow(color: .black.opacity(0.13), radius: 18, x: 0, y: 6)
         )
-        .padding(.horizontal, 24)
+        .padding(.horizontal, 16)
     }
 
     @ViewBuilder
@@ -61,16 +64,16 @@ struct FloatingTabBar: View {
                 selectedTab = tab
             }
         } label: {
-            VStack(spacing: 4) {
+            VStack(spacing: 3) {
                 Image(systemName: tab.icon)
-                    .font(.system(size: 19, weight: isSelected ? .bold : .regular))
+                    .font(.system(size: 17, weight: isSelected ? .bold : .regular))
                     .foregroundColor(isSelected ? .primary : Color(.systemGray))
                 Text(tab.label)
-                    .font(.system(size: 9.5, weight: isSelected ? .semibold : .regular))
+                    .font(.system(size: 8.5, weight: isSelected ? .semibold : .regular))
                     .foregroundColor(isSelected ? .primary : Color(.systemGray))
             }
             .frame(maxWidth: .infinity)
-            .padding(.vertical, 6)
+            .padding(.vertical, 5)
         }
         .buttonStyle(.plain)
     }
@@ -90,6 +93,7 @@ struct ContentView: View {
                 ZStack {
                     switch selectedTab {
                     case .transactions: TransactionHistoryView()
+                    case .khata:        KhataView()
                     case .reports:      SummaryReportsView()
                     case .categories:   CategoryManagementView()
                     case .settings:     SettingsView()
@@ -110,21 +114,23 @@ struct ContentView: View {
                         FloatingTabBar(selectedTab: $selectedTab)
                             .frame(maxWidth: .infinity)
 
-                        // "+" FAB — bottom-right corner, overlaps tab bar upward
-                        Button {
-                            showAddExpense = true
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 22, weight: .semibold))
-                                .foregroundColor(.primary)
-                                .frame(width: 58, height: 58)
-                                .background(
-                                    Circle()
-                                        .fill(Color(.systemBackground))
-                                        .shadow(color: .black.opacity(0.13), radius: 18, x: 0, y: 6)
-                                )
+                        // "+" FAB — hidden on Khata tab (KhataView has its own FAB)
+                        if selectedTab != .khata {
+                            Button {
+                                showAddExpense = true
+                            } label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 22, weight: .semibold))
+                                    .foregroundColor(.primary)
+                                    .frame(width: 58, height: 58)
+                                    .background(
+                                        Circle()
+                                            .fill(Color(.systemBackground))
+                                            .shadow(color: .black.opacity(0.13), radius: 18, x: 0, y: 6)
+                                    )
+                            }
+                            .offset(x: -20, y: -90)
                         }
-                        .offset(x: -20, y: -90) // floats above the tab bar at the right edge
                     }
                 }
                 .ignoresSafeArea(edges: .bottom)
